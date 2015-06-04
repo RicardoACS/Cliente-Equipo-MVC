@@ -15,8 +15,12 @@
     <body>
         <h2>Listado</h2>
         <%
-            HttpSession sesion = request.getSession();
+            try
+            {
+                HttpSession sesion = request.getSession();
             Cliente cliente = (Cliente) sesion.getAttribute("cliente");
+         
+            
             
         %>
         <table border="0">
@@ -57,6 +61,13 @@
                     </td>
                     <td>
                         <%=cliente.getEquipo().getEntrada()%>
+                        <%
+                        }
+                        catch(Exception e)
+                        {
+
+                        }
+                        %>
                     </td>
                 </tr>
             </tbody>

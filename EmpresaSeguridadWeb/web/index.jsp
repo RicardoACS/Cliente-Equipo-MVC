@@ -17,5 +17,7 @@
         <a href="ingreso_cliente_equipo.jsp">Ingreso Cliente - Equipo</a>
         <br>
         <a href="cliente_equipo.jsp">Listado Cliente - Equipo</a>
+        <br>
+        <a href="procesar_borrado.do">Borrar Cliente - Equipo</a>
     </body>
 </html>

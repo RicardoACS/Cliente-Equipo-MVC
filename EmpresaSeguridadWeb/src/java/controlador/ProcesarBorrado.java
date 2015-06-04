@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Cliente;
 
 /**
@@ -33,18 +34,10 @@ public class ProcesarBorrado extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            request.getSession().getAttribute("cliente");
-            Cliente cliente = new Cliente();
             
-            cliente.setRut(null);
-            cliente.setNombre(null);
-            cliente.setDireccion(null);
-            cliente.setComuna(null);
-            cliente.getEquipo().setMarca(null);
-            cliente.getEquipo().setModelo(null);
-            cliente.getEquipo().setClave(null);
-            cliente.getEquipo().setEntrada(null);
-            request.getRequestDispatcher("ingreso_correcto.jsp").forward(request, response);
+            Cliente cliente = new Cliente();
+            request.getSession().setAttribute("cliente", cliente);           
+            request.getRequestDispatcher("cliente_borrado.jsp").forward(request, response);
         }
     }
 
